@@ -9,7 +9,11 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 
-public class LevelCompleteDialog {
+interface LevelDialog {
+    void show();
+}
+
+public class LevelCompleteDialog implements LevelDialog {
 
     private Stage dialog;
 
@@ -45,7 +49,10 @@ public class LevelCompleteDialog {
         dialog.setScene(dialogScene);
     }
 
+    @Override
     public void show() {
         dialog.showAndWait();
     }
 }
+
+
